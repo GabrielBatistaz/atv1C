@@ -1,0 +1,439 @@
+Lista 1
+
+1)
+#include <stdlib.h>
+#include <stdio.h>
+
+int main()
+{
+    int a,b=2,s;
+    printf("Digite um numero para saber se é par ou impar:");
+    scanf("%i",&a);
+    s=a%b;
+    if(s==0){
+        printf("O número é par");
+    }
+    else{
+        printf("o número é impar");
+        
+    }
+    return 0;
+}
+
+2)
+#include <stdlib.h>
+#include <stdio.h>
+
+int main()
+{
+    int a;
+    printf("Digite um numero ");
+    scanf("%i",&a);
+    if(a<0){
+        printf("O numero é negativo");
+    }
+    else if(a>0){
+        printf("O numero é positivo");
+    }
+    else{
+        printf("o numero é zero");
+    }
+    return 0;
+}
+
+3)
+#include <stdlib.h>
+#include <stdio.h>
+
+int main()
+{
+    char a;
+    printf("Digite uma letra ");
+    scanf("%c",&a);{
+    if(a=='a' || a=='e' || a=='i' || a=='o' || a=='u'||a=='A' || a=='E' || a=='I' || a=='O' || a=='U'){
+        printf("A letra é vogal");
+    }
+    else{
+        printf("A letra é consoante");
+    }
+    }
+    return 0;
+}
+
+4)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int quantidade, regiao;
+	float precounitario = 5.0, totalcompra, totalcfrete;
+	
+	printf("Informe a quantidade de itens comprados (ate 100): ");
+	scanf("%d", &quantidade);
+	
+	printf("Informe a regiao de entrega:\n 1-Norte\n 2-Nordeste\n 3-Centro-Oeste\n 4-Sudeste\n 5-Sul\n");
+	scanf("%d", &regiao);
+	
+	totalcompra = quantidade * precounitario;
+	
+	switch(regiao){
+		case 1:
+			totalcfrete = totalcompra * 1.1;
+			printf("Regiao de entrega: Norte\n");
+			break;
+		case 2:
+			totalcfrete = totalcompra * 1.08;
+			printf("Regiao de entrega: Nordeste\n");
+			break;
+		case 3:
+			totalcfrete = totalcompra * 1.12;
+			printf("Regiao de entrega: Centro-Oeste\n");
+			break;
+		case 4:
+			totalcfrete = totalcompra * 1.15;
+			printf("Regiao de entrega: Sudeste\n");
+			break;
+		case 5:
+			totalcfrete = totalcompra * 1.11;
+			printf("Regiao de entrega: Sul\n");
+			break;
+		default:
+			printf("Regiao de entrega invalida.\n");
+			return 1;
+			
+	}
+	
+	printf("Total a pagar (sem o frete): R$ %.2f\n", totalcompra);
+	printf("Total a pagar (com o frete): R$ %.2f\n", totalcfrete);
+	
+	return 0;
+}
+
+5)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    char estadocivil;
+    int idade, qtdfilhos, idadefilhomaisvelho;
+    char sexo, nomeconjuge[50], cidade[50];
+    float salarioatual;
+
+    printf("Digite o seu estado civil (S, C, D ou V): ");
+    scanf("%c", &estadocivil);
+
+    switch(estadocivil) {
+        case 'S':
+        case 's':
+            printf("Voce eh solteiro(a). Informe sua idade: ");
+            scanf("%d", &idade);
+            printf("Opcao informada: Solteiro(a)\n");
+            printf("Idade informada: %d anos\n", idade);
+            break;
+
+        case 'C':
+        case 'c':
+            printf("Voce eh casado(a). Informe o sexo do conjuge (M ou F): ");
+            scanf(" %c", &sexo);
+            printf("Informe o nome do conjuge: ");
+            scanf("%s", nomeconjuge);
+            printf("Opcao informada: Casado(a)\n");
+            printf("Sexo do conjuge: %c\n", sexo);
+            printf("Nome do conjuge: %s\n", nomeconjuge);
+            break;
+
+        case 'D':
+        case 'd':
+            printf("Voce é divorciado(a). Informe a quantidade de filhos: ");
+            scanf("%d", &qtdfilhos);
+            printf("Informe a idade do filho mais velho: ");
+            scanf("%d", &idadefilhomaisvelho);
+            printf("Opcao informada: Divorciado(a)\n");
+            printf("Quantidade de filhos: %d\n", qtdfilhos);
+            printf("Idade do filho mais velho: %d anos\n", idadefilhomaisvelho);
+            break;
+
+        case 'V':
+        case 'v':
+            printf("Voce eh viuvo(a). Informe a cidade onde vive: ");
+            scanf("%s", cidade);
+            printf("Informe o salario atual: ");
+            scanf("%f", &salarioatual);
+            printf("Opcao informada: Viuvo(a)\n");
+            printf("Cidade onde vive: %s\n", cidade);
+            printf("Salario atual: R$%.2f\n", salarioatual);
+            break;
+
+        default:
+            printf("Opcao invalida. Digite S, C, D ou V.\n");
+            break;
+    }
+
+    return 0;
+}
+
+6)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int i;
+
+    printf("Múltiplos de 5 no intervalo de 1 a 500:\n");
+    for(i = 1; i <= 500; i++) {
+        if(i % 5 == 0) {
+            printf("%d|", i);
+        }
+    }
+    printf("\n");
+
+    return 0;
+}
+
+7)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int k = 0, num, soma = 0;
+    float media;
+
+    printf("Digite 10 numeros:\n");
+    while(k < 10) {
+        scanf("%d", &num);
+        printf("Metade de %d: %.2f\n", num, num / 2.0);
+        soma += num;
+        k++;
+    }
+    media = soma / 10.0;
+    printf("Média dos numeros lidos: %.2f\n", media);
+
+    return 0;
+}
+
+8)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int inicio, fim, i;
+
+    printf("Digite o inicio do intervalo: ");
+    scanf("%d", &inicio);
+
+    printf("Digite o fim do intervalo: ");
+    scanf("%d", &fim);
+
+    printf("Polegadas\tCentimetros\n");
+
+    i = inicio;
+    do {
+        float cm = i * 2.54;
+        printf("%d\t\t%.2f\n", i, cm);
+        i++;
+    } while (i <= fim);
+
+    return 0;
+}
+
+9)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    char nome[80], sexo;
+    int idade, i;
+
+    for (i = 1; i <= 20; i++) {
+        printf("Digite o nome da pessoa %d: ", i);
+        scanf("%s", nome);
+
+        printf("Digite a idade da pessoa %d: ", i);
+        scanf("%d", &idade);
+
+        printf("Digite o sexo da pessoa %d (M/F): ", i);
+        scanf(" %c", &sexo);
+
+        if (sexo == 'M'||'m' && idade > 21) {
+            printf("Nome das pessoas com os requisitos: %s\n", nome);
+        } else {
+            printf("Essa pessoa nao atende aos requisitos.\n");
+        }
+    }
+
+    return 0;
+}
+
+10)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n,i,num,maior=0;
+
+    printf("Digite a quantidade de numeros: ");
+    scanf("%d", &n);
+
+    for (i = 1; i <= n; i++) {
+        printf("Digite o numero %d: ",i);
+        scanf("%d", &num);
+
+        if (num > maior) {
+            maior = num;
+        }
+    }
+    printf("O maior numero digitado foi:%d\n", maior);
+
+    return 0;
+}
+
+11)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n,i,num,maior=0;
+
+    printf("Digite a quantidade de números: ");
+    scanf("%d", &n);
+
+    for (i = 1; i <= n; i++) {
+        printf("Digite o número %d: ",i);
+        scanf("%d", &num);
+
+        if (num > maior) {
+            maior = num;
+        }
+    }
+    printf("O maior número digitado foi:%d\n", maior);
+
+    return 0;
+}
+
+12)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int preco = 2; 
+    int qtde_choc, cedula_pago, troco;
+
+    printf("Bem-vindo a maquina de venda de chocolates!\n\n");
+    printf("Digite a quantidade de chocolates que deseja comprar: ");
+    scanf("%d", &qtde_choc);
+
+    int valor_total = preco * qtde_choc;
+
+    printf("O valor total da compra eh: R$ %d,00\n", valor_total);
+    printf("Insira a cedula para efetuar o pagamento (somente notas de 2, 5, 10, 20 e 50): ");
+    scanf("%d", &cedula_pago);
+
+    if (cedula_pago < valor_total) {
+        printf("Cedula inserida eh menor que o valor da compra. Cancelando a transacao.\n");
+    } else {
+        troco = cedula_pago - valor_total;
+        printf("O seu troco eh: R$ %d,00\n", troco);
+
+        
+        int cedula_50 = troco / 50;
+        troco = troco % 50;
+
+        int cedula_20 = troco / 20;
+        troco = troco % 20;
+
+        int cedula_10 = troco / 10;
+        troco = troco % 10;
+
+        int cedula_5 = troco / 5;
+        troco = troco % 5;
+
+        int cedula_2 = troco / 2;
+        troco = troco % 2;
+
+        int moeda_1 = troco;
+
+        printf("Entregando troco:\n");
+        if (cedula_50 > 0) {
+            printf("%d cedulas de R$ 50,00\n", cedula_50);
+        }
+        if (cedula_20 > 0) {
+            printf("%d cedulas de R$ 20,00\n", cedula_20);
+        }
+        if (cedula_10 > 0) {
+            printf("%d cedulas de R$ 10,00\n", cedula_10);
+        }
+        if (cedula_5 > 0) {
+            printf("%d cedulas de R$ 5,00\n", cedula_5);
+        }
+        if (cedula_2 > 0) {
+            printf("%d cedulas de R$ 2,00\n", cedula_2);
+        }
+        if (moeda_1 > 0) {
+            printf("%d moedas de R$ 1,00\n", moeda_1);
+        }
+    }
+    return 0;
+}
+
+13)
+#include<stdio.h>
+#include<stdlib.h>
+
+int main() {
+	float preco,precod=0,precoA=0,precoP=0,lucro=0;
+	int k=-1,i=0,escolha,p=0,escolhac;
+	
+	do{
+	    i++;
+		do{
+		    printf("\nInforme o valor do produto: ");
+		    scanf("%f",&preco);
+		    lucro = preco+lucro;
+		
+		    precod=precod+preco;
+		    k++;
+		}while(preco>0);
+		
+		printf("Quantidade de itens: %i",k);
+		printf("\nConta: %.2f",precod);
+
+			
+		if(precod > 0){
+			printf("\n1.Dinheiro - 2.Cart Debito - 3.Cart Credito - 0.Sair");
+			printf("\nEscolha uma opção de pagamento. ");
+			scanf("%i",&escolha);
+			precoP = precod;
+		
+			p = p+k;
+			k = -1;
+			if(escolha == 1){
+			printf("Você escolheu opção 1.");
+			printf("\nPercentual de desconto = 10%");
+			precoA = precod/10;
+			precod = precod - precoA;
+			printf("\nO valor final a pagar será de: %.2f",precod);
+			}else if(escolha == 2){
+				printf("Você escolheu opção 2.");
+				printf("\nPercentual de desconto = 5%");
+				precoA = precod/20;
+				precod = precod - precoA;
+				printf("\nO valor final a pagar será de: %.2f",precod);
+			}else if(escolha == 3){
+				printf("Você escolheu opção 2.");
+				printf("\nPercentual de desconto = 0");
+				printf("\nO valor final a pagar será de: %.2f",precod);
+			}
+		
+		    precod = 0;
+		    printf("\nCompra realizada.");	
+
+	
+		printf("Mais compras? 1.Sim - 0.Nao");
+		scanf("%i",&escolhac);
+	}
+		
+	}while(escolhac!=0);
+		printf("\nNúmero de itens vendidos no dia: %i",p);
+		printf("\nNúmero de vendas no dia: %i",i);
+		printf("\nLucro do dia: %.2f",lucro);
+}
